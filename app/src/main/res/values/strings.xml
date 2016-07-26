@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Informacion Contacto</string>
+    <string name="nombre">Nombre completo</string>
+    <string name="nombre2">Fulanito DeTal Perengano</string>
+    <string name="telefono">Teléfono</string>
+    <string name="email">E-Mail</string>
+    <string name="descripcion">Descripción del contacto</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="confirmar">Confirmar Datos</string>
+    <string name="fecha">Fecha de Nacimiento</string>
+    <string name="descrip">Descripción</string>
+    <string name="editar">Editar Datos</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae massa arcu. Quisque bibendum feugiat lectus, eu pellentesque nisi bibendum ut. Donec porta metus eros.</string>
+</resources>
