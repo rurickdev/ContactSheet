@@ -1,16 +1,14 @@
 package com.blogspot.mosaicogeek.skintigth.informacioncontacto;
 
+
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.design.widget.TextInputEditText;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
-
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 public class ActivityPedirDatos extends AppCompatActivity {
 
@@ -32,14 +30,45 @@ public class ActivityPedirDatos extends AppCompatActivity {
         Descripcion = (TextInputEditText) findViewById(R.id.descripcionText);
         Fecha = (DatePicker) findViewById(R.id.datePic);
 
+        //Recibe los datos a editar del activity "DetalleContacto"
         Bundle bundle = getIntent().getExtras();
-        Nombre.setText(bundle.getString("nombre_edit"));
-        Telefono.setText(bundle.getString("telefono_edit"));
-        Email.setText(bundle.getString("email_edit"));
-        Descripcion.setText(bundle.getString("descripcion_edit"));
+        try{
+            Nombre.setText(bundle.getString("nombre_edit"));
+            Telefono.setText(bundle.getString("telefono_edit"));
+            Email.setText(bundle.getString("email_edit"));
+            Descripcion.setText(bundle.getString("descripcion_edit"));
+            Fecha.updateDate(bundle.getInt("año"),bundle.getInt("mes"),bundle.getInt("dia"));
+        }catch(Exception e){
+        }
+
     }
 
-    public void siguiente(View v) {
+    //Metodo dedicado a preguntar al usuario si desea enviar los datos
+    public void botonSiguiente(View v) {
+
+        AlertDialog.Builder constructor = new AlertDialog.Builder(this);
+
+        constructor.setTitle("Confirmacion")
+                .setMessage("¿Desea enviar los datos del contacto?")
+                .setCancelable(true)
+                .setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        enviarDatos();
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        finish();
+                    }
+                });
+        constructor.show();
+    }
+
+    //Metodo dedicado a enviar los datos de una activity a otra
+    private void enviarDatos() {
+
         String nombre = Nombre.getText().toString();
         String telefono = Telefono.getText().toString();
         String email = Email.getText().toString();
@@ -56,4 +85,5 @@ public class ActivityPedirDatos extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+
 }

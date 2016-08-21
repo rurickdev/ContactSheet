@@ -109,7 +109,7 @@
         android:id="@+id/boton"
         android:layout_alignParentBottom="true"
         android:text="@string/siguiente"
-        android:onClick="siguiente"
+        android:onClick="botonSiguiente"
     />
 
     </LinearLayout>
