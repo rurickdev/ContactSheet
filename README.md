@@ -10,3 +10,9 @@ La plicacion cumple con los requerimientos
 -Datos precargados en el campo de texto al seleccionar "Editar Datos"
 
 Se anexan capturas de pantalla
+
+![Alt text](/Screenshot_20160821-184055.img.png?raw=true "Datos a enviar")
+
+![Alt text](/Screenshot_20160821-184059img.png?raw=true "Dialogo de confirmacion")
+
+![Alt text](/Screenshot_20160821-184107.png?raw=true "Datos del contacto")
