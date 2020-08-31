@@ -3,6 +3,7 @@
 /local.properties
 /.idea/workspace.xml
 /.idea/libraries
+.vscode/
 .DS_Store
 /build
 /captures
